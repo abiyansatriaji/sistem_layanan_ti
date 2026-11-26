@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /earsip_pdam/
+    
+    # Redirect ke  jika file/direktori tidak ada
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ /$1 [L]
+</IfModule>
+
+Options -Indexes
